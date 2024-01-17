@@ -1,0 +1,8 @@
+path: /home/yy/data/wildfire/D-Fire-001/
+train: train/images # relative to path
+val: val/images # relative to path
+test: test/images # relative to path
+
+nc: 2
+
+names: [0: smoke,1: fire]
