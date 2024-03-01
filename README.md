@@ -1,22 +1,82 @@
-# 内容
-### 欢迎查看我们的项目，本项目针对火点检测问题进行了研究，意在训练模型来对火点和烟雾进行检测。
+# Content
+### &emsp;Welcome to our project, which focuses on the problem of fire detection and aims to train a model to detect fire and smoke.
 # Highlights:
-### 1、一个多模态的模型，包括红外与可见光。
-### 2、轻量化的模型，使用YOLOv8n通过D-Fire数据集和我们自己处理后的flame2数据集训练得到，性能优异，且参数量小，便于部署。
-# 模型
-### 1、可见光模型
-### 2、红外模型
-# 数据集
-### 可见光数据集：链接
-### 红外数据集：链接
+### &emsp;1、A multi-modal model, including infrared and visible light.
+### &emsp;2、The lightweight model is trained by using YOLOv8n through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.
+# model
+### &emsp;1、train model
+    from ultralytics import YOLO
+    
+    # Load a model
+    model = YOLO('yolov8n.pt')  # load an official model
+    PROJECT = 'wildfire_identification_data_enhance2.0'  # project name
+    NAME = 'test01'  # run name
+    
+    model.train(
+    	data='data.yaml',  # If you want to train an IR model, use flames2.yaml
+    	task='detect',
+    	epochs=200,
+    	verbose=True,
+		batch=64,
+    	imgsz=640,
+    	patience=20,
+    	save=True,
+    	device='0,1',
+    	workers=8,
+    	project=PROJECT,
+    	name=NAME,
+    	cos_lr=True,
+    	lr0=0.0001,
+    	lrf=0.00001,
+    	warmup_epochs=3,
+    	warmup_bias_lr=0.000001,
+    	optimizer='Adam',
+    	seed=42,
+    )
+### &emsp;2、test model
+#### &emsp;&emsp;(1) Calculate the dataset metrics
+    from ultralytics import YOLO
+    model_path = "best.pt"
+    model = YOLO(model_path)
+    metrics = model.val(split="val", iou=0.2, conf=0.31)  
+    metrics.box.map  # map50-95
+    metrics.box.map50  # map50
+    metrics.box.map75  # map75
+    metrics.box.maps  # a list contains map50-95 of each category
+
+#### &emsp;&emsp;（2）Image recognition
+    def model_predict(model, image_path, conf_threshold, iou_threshold):
+	    model.predict(
+		    image_path,
+		    conf=conf_threshold,
+		    iou=iou_threshold,
+		    save=True,
+		    show_labels=True,
+		    boxes=True,
+		    show_conf=True
+    	)
+    if __name__ == "__main__":
+		model_path = "best.pt"
+    	model = YOLO(model_path)
+		img_path = "your img path"
+		model_predict(model, img_path, 0.2, 0.31)
+# Dataset
+&emsp;Visible light dataset：链接<br>
+&emsp;Infrared dataset：链接
 # requestments
-### ultralytics==8.0.136
-### streamlit==1.24.0
-### py-cpuinfo
+&emsp;ultralytics==8.0.136<br>
+&emsp;streamlit==1.24.0<br>
+&emsp;py-cpuinfo<br>
 # result
-### 展示结果
+&emsp;Visible light model results
+<div align="center">
+   <img src="https://img2.imgtp.com/2024/03/01/bfWtK7Z4.jpeg"  width=400 height=160><img src="https://img2.imgtp.com/2024/03/01/Qv3nULPH.jpeg" width=400 height=160>
+</div>
+<div align="center">
+   <img src="https://img2.imgtp.com/2024/03/01/eG54KlXV.jpeg"  width=400 height=160><img src="https://img2.imgtp.com/2024/03/01/YKljm6dF.jpeg" width=400 height=160>
+</div>
+
 # Disclaimer
-### 虽然我们的模型在D-fire数据集上表现很好，但我们不保证在现实的任何工作环境中都可以表现良好
-# 其他
-### 1、数据集后期传到数据集管理的网站，这里会给相应的链接。
-### 2、yaml文件中的内容根据实际调整
+&emsp;Although our model performs well on the D-fire dataset, we do not guarantee that it can perform well in any realistic work environment.
+# Others
+
