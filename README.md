@@ -61,6 +61,8 @@
 		img_path = "your img path"
 		model_predict(model, img_path, 0.2, 0.31)
 # Dataset
+&emsp;The dataset of the visible light model of this project is the processed and data-enhanced [D-Fire dataset](https://github.com/gaiasd/DFireDataset), and we provide the relevant data-augmented code part, the unmodified D-Fire dataset is here. You can also download the processed dataset directly.<br>
+&emsp;The infrared dataset is obtained by extracting the infrared video from the [FLAME2 dataset](https://ieee-dataport.org/open-access/flame-2-fire-detection-and-modeling-aerial-multi-spectral-image-dataset) through frame extraction and binarization labeling, and we provide the relevant code and also provide the processed dataset.<br>
 &emsp;Visible light dataset：链接<br>
 &emsp;Infrared dataset：链接
 # requestments
