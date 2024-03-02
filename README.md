@@ -71,6 +71,11 @@ password：qr92
 &emsp;ultralytics==8.0.136<br>
 &emsp;streamlit==1.24.0<br>
 &emsp;py-cpuinfo<br>
+&emsp;opencv-python==4.8.1.78<br>
+&emsp;numpy==1.24.3<br>
+&emsp;matplotlib==3.7.4<br>
+&emsp;albumentations==1.3.1<br>
+&emsp;torchvision==0.16.0<br>
 # result
 ## &emsp;Visible light model results
 <div align="center">
