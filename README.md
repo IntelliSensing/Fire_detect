@@ -2,7 +2,7 @@
 ### &emsp;Welcome to our project, which focuses on the problem of fire detection and aims to train a model to detect fire and smoke.
 # Highlights:
 ### &emsp;1、A multi-modal model, including infrared and visible light.
-### &emsp;2、The lightweight model is trained by using YOLOv8n through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.
+### &emsp;2、The lightweight model is trained by using [YOLOv8n](https://github.com/ultralytics/ultralytics) through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.
 # model
 ### &emsp;1、train model
     from ultralytics import YOLO
@@ -59,7 +59,24 @@
 		model_path = "best.pt"
     	model = YOLO(model_path)
 		img_path = "your img path"
-		model_predict(model, img_path, 0.2, 0.31)
+  		iou = 0.2 # you can change it depending on what you need
+    	conf = 0.31
+		model_predict(model, img_path, iou, conf)
+#### &emsp;&emsp;（3）Test and Val result
+#### &emsp;&emsp;&emsp;Below is the output data for the visible light model.
+
+<div align="center">
+   <img src="https://img2.imgtp.com/2024/03/03/jF05ns0O.jpg">
+   <p>0.3ms preprocess, 12.3ms inference, 0.0ms loss, 0.1ms postprocess per image.</p>
+</div>
+
+#### &emsp;&emsp;&emsp;Below is the output data for the infrared model.
+
+<div align="center">
+   <img src="https://img2.imgtp.com/2024/03/03/H4abyJtw.jpg">
+   <p>0.4ms preprocess, 16.6ms inference, 0.0ms loss, 0.1ms postprocess per image.</p>
+</div>
+
 # Dataset
 &emsp;The dataset of the visible light model of this project is the processed and data-enhanced [D-Fire dataset](https://github.com/gaiasd/DFireDataset), and we provide the relevant data-augmented code part, the unmodified D-Fire dataset is here. You can also download the processed dataset directly.<br>
 &emsp;The infrared dataset is obtained by extracting the infrared video from the [FLAME2 dataset](https://ieee-dataport.org/open-access/flame-2-fire-detection-and-modeling-aerial-multi-spectral-image-dataset) through frame extraction and binarization labeling, and we provide the relevant code and also provide the processed dataset.<br>
