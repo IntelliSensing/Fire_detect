@@ -5,7 +5,7 @@
 ### &emsp;2、The lightweight model is trained by using [YOLOv8n](https://github.com/ultralytics/ultralytics) through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.
 # model
 &emsp;We used the YOLOv8 model for training on the self-made infrared dataset and the D-Fire dataset, which can realize multi-modal fire point recognition and smoke detection. While ensuring high accuracy, we adjusted the relevant hyperparameters to ensure that the model also has high efficiency and inference speed.<br>
-### &emsp;The details of the training model and the test model are given in the [README.md](./train_model/README.md) file in the train_models.
+### &emsp;The details of the training model and the test model are given in the [README.md](./train_model) file in the train_models.
 # Test and Val result
 ### &emsp;&emsp;&emsp;Below is the output data for the visible light model.
 
