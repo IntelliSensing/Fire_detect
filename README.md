@@ -4,73 +4,17 @@
 ### &emsp;1、A multi-modal model, including infrared and visible light.
 ### &emsp;2、The lightweight model is trained by using [YOLOv8n](https://github.com/ultralytics/ultralytics) through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.
 # model
-### &emsp;1、train model
-    from ultralytics import YOLO
-    
-    # Load a model
-    model = YOLO('yolov8n.pt')  # load an official model
-    PROJECT = 'wildfire_identification_data_enhance2.0'  # project name
-    NAME = 'test01'  # run name
-    
-    model.train(
-    	data='data.yaml',  # If you want to train an IR model, use flames2.yaml
-    	task='detect',
-    	epochs=200,
-    	verbose=True,
-		batch=64,
-    	imgsz=640,
-    	patience=20,
-    	save=True,
-    	device='0,1',
-    	workers=8,
-    	project=PROJECT,
-    	name=NAME,
-    	cos_lr=True,
-    	lr0=0.0001,
-    	lrf=0.00001,
-    	warmup_epochs=3,
-    	warmup_bias_lr=0.000001,
-    	optimizer='Adam',
-    	seed=42,
-    )
-### &emsp;2、test model
-#### &emsp;&emsp;(1) Calculate the dataset metrics
-    from ultralytics import YOLO
-    model_path = "best.pt"
-    model = YOLO(model_path)
-    metrics = model.val(split="val", iou=0.2, conf=0.31)  
-    metrics.box.map  # map50-95
-    metrics.box.map50  # map50
-    metrics.box.map75  # map75
-    metrics.box.maps  # a list contains map50-95 of each category
-
-#### &emsp;&emsp;（2）Image recognition
-    def model_predict(model, image_path, conf_threshold, iou_threshold):
-	    model.predict(
-		    image_path,
-		    conf=conf_threshold,
-		    iou=iou_threshold,
-		    save=True,
-		    show_labels=True,
-		    boxes=True,
-		    show_conf=True
-    	)
-    if __name__ == "__main__":
-		model_path = "best.pt"
-    	model = YOLO(model_path)
-		img_path = "your img path"
-  		iou = 0.2 # you can change it depending on what you need
-    	conf = 0.31
-		model_predict(model, img_path, iou, conf)
-#### &emsp;&emsp;（3）Test and Val result
-#### &emsp;&emsp;&emsp;Below is the output data for the visible light model.
+&emsp;We used the YOLOv8 model for training on the self-made infrared dataset and the D-Fire dataset, which can realize multi-modal fire point recognition and smoke detection. While ensuring high accuracy, we adjusted the relevant hyperparameters to ensure that the model also has high efficiency and inference speed.<br>
+### &emsp;The details of the training model and the test model are given in the [README.md](./train_model/README.md) file in the train_models.
+# Test and Val result
+### &emsp;&emsp;&emsp;Below is the output data for the visible light model.
 
 <div align="center">
    <img src="https://img2.imgtp.com/2024/03/03/jF05ns0O.jpg">
    <p>0.3ms preprocess, 12.3ms inference, 0.0ms loss, 0.1ms postprocess per image.</p>
 </div>
 
-#### &emsp;&emsp;&emsp;Below is the output data for the infrared model.
+### &emsp;&emsp;&emsp;Below is the output data for the infrared model.
 
 <div align="center">
    <img src="https://img2.imgtp.com/2024/03/03/H4abyJtw.jpg">
