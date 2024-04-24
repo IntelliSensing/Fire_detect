@@ -27,8 +27,8 @@
 &emsp;The infrared dataset is obtained by extracting the infrared video from the [FLAME2 dataset](https://ieee-dataport.org/open-access/flame-2-fire-detection-and-modeling-aerial-multi-spectral-image-dataset) through frame extraction and binarization labeling, and we provide the relevant code and also provide the processed dataset.<br>
 &emsp;Visible light dataset：link：[https://pan.baidu.com/s/14C1ePeKg6NYoMlIfsJ9lEg](https://pan.baidu.com/s/14C1ePeKg6NYoMlIfsJ9lEg) 
 password：0n87 <br>
-&emsp;Infrared dataset：link：[https://pan.baidu.com/s/11qoWdXmQlKBddi3HIAmb-w](https://pan.baidu.com/s/11qoWdXmQlKBddi3HIAmb-w) 
-password：qr92 
+&emsp;Infrared dataset：link：[https://pan.baidu.com/s/1kl5r-iN5jHN2gYKWQHTdew](https://pan.baidu.com/s/1kl5r-iN5jHN2gYKWQHTdew) 
+password：jx3r 
 # requestments
 &emsp;ultralytics==8.0.136<br>
 &emsp;streamlit==1.24.0<br>
