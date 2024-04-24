@@ -3,6 +3,7 @@
 # Highlights:
 ### &emsp;1、A multi-modal model, including infrared and visible light.
 ### &emsp;2、The lightweight model is trained by using [YOLOv8n](https://github.com/ultralytics/ultralytics) through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.
+### &emsp;3、We used our own frame matching method to optimize the identification of inter-frame leaks in infrared fire point detection. Links to relevant papers will be provided in the future.
 # model
 &emsp;We used the YOLOv8 model for training on the self-made infrared dataset and the D-Fire dataset, which can realize multi-modal fire point recognition and smoke detection. While ensuring high accuracy, we adjusted the relevant hyperparameters to ensure that the model also has high efficiency and inference speed.<br>
 ### &emsp;The details of the training model and the test model are given in the [README.md](./train_models) file in the train_models.
@@ -10,14 +11,14 @@
 ### &emsp;&emsp;&emsp;Below is the output data for the visible light model.
 
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/03/03/jF05ns0O.jpg">
+   <img src="https://img2.imgtp.com/2024/04/24/8q6gvrWq.jpg">
    <p>0.3ms preprocess, 12.3ms inference, 0.0ms loss, 0.1ms postprocess per image.</p>
 </div>
 
 ### &emsp;&emsp;&emsp;Below is the output data for the infrared model.
 
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/03/03/H4abyJtw.jpg">
+   <img src="https://img2.imgtp.com/2024/04/24/zB2FQSpM.jpg">
    <p>0.4ms preprocess, 16.6ms inference, 0.0ms loss, 0.1ms postprocess per image.</p>
 </div>
 
@@ -48,10 +49,7 @@ password：qr92
 
 ## &emsp;Infrared model results
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/03/02/DJHwue8S.jpg"  width=400 height=250><img src="https://img2.imgtp.com/2024/03/02/Avix2KkG.jpg" width=400 height=250>
-</div>
-<div align="center">
-   <img src="https://img2.imgtp.com/2024/03/02/uLkp0GdH.jpg"  width=400 height=250><img src="https://img2.imgtp.com/2024/03/02/DP7DpUQ7.jpg" width=400 height=250>
+   <img src="https://img2.imgtp.com/2024/04/24/Z4n93YR7.jpg"  width=800 height=500>
 </div>
 
 # Disclaimer<br>
