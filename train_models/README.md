@@ -1,4 +1,4 @@
-### env
+### Environment configuration
 It is recommended to use Python3.8. You can download the corresponding version from the [Python official website](https://www.python.org/).<br/>
 Download the requests.txt we provided and run the following code.<br/>
 ```bash
