@@ -1,5 +1,6 @@
 # Fire point detection
-* [Content](#1-Content)
+## 0. Table of Contents
+* [Content](#2-Content)
 * [Highlights](#2-Highlights)
 * [Model](#3-Model)
 * [Dataset](#4-Dataset)
@@ -10,16 +11,16 @@
    * [Visible light model results](#81-Visible-light-model-results)
    * [Infrared model results](#82-Infrared-model-results)
 * [Disclaimer](#9-Disclaimer)
-## 1.Content
+## 1. Content
 &emsp;Welcome to our project, which focuses on the problem of fire detection and aims to train a model to detect fire and smoke.
-## 2.Highlights
+## 2. Highlights
 &emsp;(1)A multi-modal model, including infrared and visible light.<br />
 &emsp;(2)The lightweight model is trained by using [YOLOv8n](https://github.com/ultralytics/ultralytics) through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.<br />
 &emsp;(3)We used our own frame matching method to optimize the identification of inter-frame leaks in infrared fire point detection. Links to relevant papers will be provided in the future.<br />
-## 3.Model
+## 3. Model
 &emsp;We used the YOLOv8 model for training on the self-made infrared dataset and the D-Fire dataset, which can realize multi-modal fire point recognition and smoke detection. While ensuring high accuracy, we adjusted the relevant hyperparameters to ensure that the model also has high efficiency and inference speed.<br>
 &emsp;The details of the training model and the test model are given in the [README.md](./train_models) file in the train_models.
-## 4.Dataset
+## 4. Dataset
 &emsp;The dataset of the visible light model of this project is the processed and data-enhanced [D-Fire dataset](https://github.com/gaiasd/DFireDataset), and we provide the relevant data-augmented code part, the unmodified D-Fire dataset is here. You can also download the processed dataset directly.<br>
 &emsp;The infrared dataset is obtained by extracting the infrared video from the [FLAME2 dataset](https://ieee-dataport.org/open-access/flame-2-fire-detection-and-modeling-aerial-multi-spectral-image-dataset) through frame extraction and binarization labeling, and we provide the relevant code and also provide the processed dataset.<br>
 &emsp;Visible light dataset：link：[https://pan.baidu.com/s/14C1ePeKg6NYoMlIfsJ9lEg](https://pan.baidu.com/s/14C1ePeKg6NYoMlIfsJ9lEg) 
@@ -27,7 +28,7 @@ password：0n87 <br>
 &emsp;Infrared dataset：link：[https://pan.baidu.com/s/1kl5r-iN5jHN2gYKWQHTdew](https://pan.baidu.com/s/1kl5r-iN5jHN2gYKWQHTdew) 
 password：jx3r 
 
-## 5.Infrared Video Data Processing
+## 5. Infrared Video Data Processing
 <div align="center">
    <img src="https://img2.imgtp.com/2024/05/15/ZzJMvwoS.jpg"  width=912 height=295>
 </div>
@@ -49,7 +50,7 @@ password：jx3r
 - By reversing the input sequence of video images and repeating the process, an image dataset with similar target information in the previous and subsequent frames can be obtained.<br/>
 
 
-## 6.Test and Val result
+## 6. Test and Val result
 <div align="center">
 <table id="Visible light modelRelated indicators">
   <tr>
@@ -119,7 +120,7 @@ password：jx3r
 </div>
 
 
-## 7.requestments
+## 7. requestments
 &emsp;ultralytics==8.0.136<br>
 &emsp;streamlit==1.24.0<br>
 &emsp;py-cpuinfo<br>
@@ -128,7 +129,7 @@ password：jx3r
 &emsp;matplotlib==3.7.4<br>
 &emsp;albumentations==1.3.1<br>
 &emsp;torchvision==0.16.0<br>
-## 8.result
+## 8. result
  
 ### &emsp;8.1 Visible light model results
 <div align="center">
@@ -144,7 +145,7 @@ password：jx3r
 </div>
 &emsp;(a)(d) is the coarse image annotated by the machine, (b)(e) is the annotated image after the knowledge transfer model, and (c)(f) is the fine annotated image after the image frame matching algorithm.<br/>
 
-## 9.Disclaimer
+## 9. Disclaimer
 &emsp;Our model performs well on the D-fire dataset. Please evaluate its performance before applying it to other real-life environments.
 ## Others
 
