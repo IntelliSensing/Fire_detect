@@ -1,3 +1,13 @@
+### env
+It is recommended to use Python3.8. You can download the corresponding version from the [Python official website](https://www.python.org/).<br/>
+Download the requests.txt we provided and run the following code.<br/>
+```bash
+pip install -r requirements.txt
+```
+or
+```bash
+conda install --file requirements.txt
+```
 ### Download the dataset
 In order to train our model, we first need to download the dataset, which can be downloaded from Baidu NetDisk. Follow the link we provided to download the dataset locally and unzip it. If you are using Linux or need to install the dataset on a remote server, you can use the bypy library to download the dataset from  baidu netdisk. First, add our dataset to your Baidu Netdisk，then install the library by running the following command:
 ```bash
