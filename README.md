@@ -143,7 +143,7 @@ password：jx3r
 <div align="center">
    <img src="https://img2.imgtp.com/2024/05/15/Cstrdc71.jpg"  width=800 height=500>
 </div>
-&emsp;(a)(d) is the coarse image annotated by the machine, (b)(e) is the annotated image after the knowledge transfer model, and (c)(f) is the fine annotated image after the image frame matching algorithm.<br/>
+&emsp;(a)(d) is recognized by Model v1, (b)(e) is recognized by Model v2, (c)(f) is recognized by Model v3.The pink box is the fire point recognized by the model, and the green circle is the difference between the images.<br/>
 
 ## 9. Disclaimer
 &emsp;Our model performs well on the D-fire dataset. Please evaluate its performance before applying it to other real-life environments.
