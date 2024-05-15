@@ -1,6 +1,6 @@
 # Fire point detection
 ## 0. Table of Contents
-* [Content](#2-Content)
+* [Content](#1-Content)
 * [Highlights](#2-Highlights)
 * [Model](#3-Model)
 * [Dataset](#4-Dataset)
