@@ -7,6 +7,8 @@
 	* [Download](#41-Download)
 	* [Requirement](#42-Requirement)
 * [Infrared Video Data Processing](#5-Infrared-Video-Data-Processing)
+   * [Processing Flow Chart](#51-Processing-Flow-Chart)
+   * [Frame Matching Algorithm](#52-Frame-Matching-Algorithm)
 * [Result](#6-Result)
    * [Quantitative Results](#61-Quantitative-Results)
        * [Visible light model evaluation metric](#611-Visible-light-model-evaluation-metric)
@@ -42,9 +44,12 @@ password：jx3r
 &emsp;torchvision==0.16.0<br>
 
 ## 5. Infrared Video Data Processing
+### &emsp;5.1 Processing Flow Chart
 <div align="center">
    <img src="https://img2.imgtp.com/2024/05/15/ZzJMvwoS.jpg"  width=912 height=295>
 </div>
+&emsp;In our experiments, we trained a total of three infrared fire detection models, Model v1 is trained using a coarsely machine annotated dataset, Model v2 is trained using a dataset annotated by a knowledge transfer model, and Model v3 is trained using a fine-annotated dataset by an image frame matching algorithm. <br/>
+The specific process is as follows:<br/>
 - The video data is cut into pictures every 10 frames in advance, and then processed.<br/>
 - Firstly, the original image is converted into a grayscale image, and then binarization is used to display the fire point in the image.<br/>
 - The position of the fire point in the image is obtained through edge detection, and then labeled data is obtained by adjacent box fusion as Dataset v1.<br/>
@@ -52,8 +57,10 @@ password：jx3r
 - The recognition result is used as Dataset v2 to train Model v2, introducing a Frame Matching Algorithm.<br/>
 - Dataset v3 is obtained after processing Dataset v2 with the Frame Matching Algorithm, and finally the final Model v3 is obtained by training Dataset v3.<br/>
 
+### &emsp;5.2 Frame Matching Algorithm
+
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/05/15/IsxPlaSL.jpg"  width=1280 height=205>
+   <img src="https://img2.imgtp.com/2024/05/15/IsxPlaSL.jpg"  width=1280 height=200>
 </div>
 - Read annotation data of two frames simultaneously: the previous frame and the current picture.<br/>
 - Use the area target indicated by the position of the annotation box in the previous frame as the matching target in the current picture.<br/>
@@ -132,7 +139,6 @@ password：jx3r
   </tr>
 </table>
 </div>
-&emsp;In our experiments, Model v1 is trained using a coarsely machine annotated dataset, Model v2 is trained using a dataset annotated by a knowledge transfer model, and Model v3 is trained using a fine-annotated dataset by an image frame matching algorithm. <br/>
 
 ### &emsp;6.2 Qualitative Results
 
