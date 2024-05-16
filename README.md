@@ -14,9 +14,9 @@
 ## 1. Content
 &emsp;Welcome to our project, which focuses on the problem of fire detection and aims to train a model to detect fire and smoke.
 ## 2. Highlights
-&emsp;(1)A multi-modal model, including infrared and visible light.<br />
-&emsp;(2)The lightweight model is trained by using [YOLOv8n](https://github.com/ultralytics/ultralytics) through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.<br />
-&emsp;(3)We used our own frame matching method to optimize the identification of inter-frame leaks in infrared fire point detection. Links to relevant papers will be provided in the future.<br />
+* A multi-modal model, including infrared and visible light.<br />
+* The lightweight model is trained by using [YOLOv8n](https://github.com/ultralytics/ultralytics) through the D-Fire data set and our own processed flame2 data set, with excellent performance and small parameter amount, which is easy to deploy.<br />
+* We used our own frame matching method to optimize the identification of inter-frame leaks in infrared fire point detection. Links to relevant papers will be provided in the future.<br />
 ## 3. Model
 &emsp;We used the YOLOv8 model for training on the self-made infrared dataset and the D-Fire dataset, which can realize multi-modal fire point recognition and smoke detection. While ensuring high accuracy, we adjusted the relevant hyperparameters to ensure that the model also has high efficiency and inference speed.<br>
 &emsp;The details of the training model and the test model are given in the [README.md](./train_models) file in the train_models.
