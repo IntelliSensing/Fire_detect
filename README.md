@@ -5,7 +5,7 @@
 * [Model](#3-Model)
 * [Dataset](#4-Dataset)
 * [Infrared Video Data Processing](#5-Infrared-Video-Data-Processing)
-* [Test and Val result](#6-Test-and-Val-result)
+* [Evaluation Metric](#6-Evaluation-Metric)
 * [requestments](#7-requestments)
 * [result](#8-result)
    * [Visible light model results](#81-Visible-light-model-results)
