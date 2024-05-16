@@ -50,7 +50,7 @@ password：jx3r
 - By reversing the input sequence of video images and repeating the process, an image dataset with similar target information in the previous and subsequent frames can be obtained.<br/>
 
 
-## 6. Test and Val result
+## 6. Evaluation Metric
 <div align="center">
 <table id="Visible light modelRelated indicators">
   <tr>
