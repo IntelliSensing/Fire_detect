@@ -147,5 +147,5 @@ password：jx3r
 
 ## 9. Disclaimer
 &emsp;Our model performs well on the D-fire dataset. Please evaluate its performance before applying it to other real-life environments.
-## Others
+
 
