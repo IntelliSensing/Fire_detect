@@ -46,7 +46,7 @@ password：jx3r
 ## 5. Infrared Video Data Processing
 ### &emsp;5.1 Processing Flow Chart
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/05/15/ZzJMvwoS.jpg"  width=912 height=295>
+   <img src=".\img\data_process.jpg"  width=912 height=295>
 </div>
 &emsp;In our experiments, we trained a total of three infrared fire detection models, Model v1 is trained using a coarsely machine annotated dataset, Model v2 is trained using a dataset annotated by a knowledge transfer model, and Model v3 is trained using a fine-annotated dataset by an image frame matching algorithm. <br/>
 The specific process is as follows:<br/>
@@ -60,7 +60,7 @@ The specific process is as follows:<br/>
 ### &emsp;5.2 Frame Matching Algorithm
 
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/05/15/IsxPlaSL.jpg"  width=1280 height=200>
+   <img src=".\img\match.jpg"  width=1280 height=200>
 </div>
 - Read annotation data of two frames simultaneously: the previous frame and the current picture.<br/>
 - Use the area target indicated by the position of the annotation box in the previous frame as the matching target in the current picture.<br/>
@@ -144,15 +144,15 @@ The specific process is as follows:<br/>
 
 #### &emsp;&emsp;6.2.1 Visible light model results
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/03/01/bfWtK7Z4.jpeg"  width=400 height=250><img src="https://img2.imgtp.com/2024/03/01/Qv3nULPH.jpeg" width=400 height=250>
+   <img src=".\img\fire01.jpeg"  width=400 height=250><img src=".\img\fire02.jpg" width=400 height=250>
 </div>
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/03/01/eG54KlXV.jpeg"  width=400 height=250><img src="https://img2.imgtp.com/2024/03/01/YKljm6dF.jpeg" width=400 height=250>
+   <img src=".\img\fire03.jpeg"  width=400 height=250><img src=".\img\fire04.jpeg" width=400 height=250>
 </div>
 
 #### &emsp;&emsp;6.2.2 Comparison of infrared model results
 <div align="center">
-   <img src="https://img2.imgtp.com/2024/05/15/Cstrdc71.jpg"  width=800 height=500>
+   <img src=".\img\IR_fire.jpg"  width=800 height=500>
 </div>
 &emsp;(a)(d) is recognized by Model v1, (b)(e) is recognized by Model v2, (c)(f) is recognized by Model v3.The pink box is the fire point recognized by the model, and the green circle is the difference between the images.<br/>
 
